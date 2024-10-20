@@ -1,0 +1,3 @@
+Report 2(Sprint 2/Scrum 2)
+
+** We received the clearance to use the old software engineering project called SnackMap. The team name/capstone project will be callled the LostGrenadiers, because the IUS campus can be very confusing. The application will provide search functionality for classrooms, buildings, professor offices, basic amenities(bathroom/water fountain/and maybe more). It will provide the end user with a basic API/GUI to make it easier for the user to find the output from their input into the program. The parameter with the program will be based on speed, functionality, and data.  ** 
