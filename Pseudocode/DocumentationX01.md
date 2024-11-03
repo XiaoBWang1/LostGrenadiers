@@ -10,7 +10,7 @@ Python(PyCharm)/Leaflet/Folium
 	directly directs the user to start their 
 	search task of the IUS' campus. The end user is 
 	graphically marked/start at Life Science building at X and Y 
-	coordinates or  be prompt to fill certain 
+	coordinates or be prompt to fill certain 
 	field/form/filter to streamline the process. 
 	
 	Main OSD
