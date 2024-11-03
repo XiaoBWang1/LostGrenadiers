@@ -3,12 +3,12 @@ Python(PyCharm)/Leaflet/Folium
 	
 	Pre-App
 	Application is activated by user 		
-	clicking on the Lost Grenadiers' map
-	user is connected to server/database
-	and is granted access to either a main 
-	OSD(on-screen display) of the logo or 
+	clicking on the Lost Grenadiers' map icon 
+ 	and then the useruser is connected to 
+	server/database and is granted access to 
+ 	either a main OSD(on-screen display) of the logo or 
 	directly allows the user to start their 
-	search the IUS' campus. The end user is 
+	search  of the IUS' campus. The end user is 
 	graphically marked/start at LF X and Y 
 	coordinates/prompt to enter certain 
 	field to streamline task. 
@@ -17,8 +17,10 @@ Python(PyCharm)/Leaflet/Folium
 	The user is either prompted||fixated on 
 	a marker||located with their current 
 	coordinates||shown a login screen. Then 
-	the a prompt will appear asking the 		    user with their input to certain field/	    attributes/characteristics. The input 	    data will eliminate all the applicable        
-	outputs retrieved from the database 
+	the a prompt will appear asking the 		   
+ 	user with their input to certain field/attributes/
+  	characteristics. The input data will eliminate 
+   	all the applicable outputs retrieved from the database 
 	locally/Internet(web browser). The 
 	outputted data will be presented to the 
 	user and awaits their response on what 	
@@ -48,7 +50,8 @@ Python(PyCharm)/Leaflet/Folium
 	error/null free. Then the associated 
 	text/image data that's available will
 	be shown to the user, who then must 
-	decide whether to refine/reuse the 			search function||end their access||stay 
+	decide whether to refine/reuse the 
+ 	search function||end their access||stay 
 	status quo in the background. 
 	
 	
