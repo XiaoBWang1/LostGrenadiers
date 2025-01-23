@@ -1,0 +1,4 @@
+
+Sprint 7 
+
+The implementation capstone has commenced and we are off to a good start. We have communicated throughout the break and we have resumed our project after a nice layoff. We have gathered to talk about the implementation of the program and the scale of the search matching from the database resources that we were given and the ones we created ourselves. I as the team lead is orchestrating the project through the Agile process through GitHub and have also collected the necessary data to add to the database as we ramp up to make a preview demo build. Chris is working on getting all the maps in order and working on the back end of the project. Matthew is tinkering with UI/UX along with the front end of the program.   
