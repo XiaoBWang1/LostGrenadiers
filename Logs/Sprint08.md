@@ -1,0 +1,3 @@
+/*Log 8
+
+	The three of us have been spending time gathering at IUS around times to convene on the progress of the project. The project demo is going to be preview in the next class meeting and we will use the time to document test cases using the other students as customers. It will show the input and output of the program and its basic functionality and maybe a bit of the GUI which will comprise of the maps and a locator. It will be simple at first due to its scalability and our limited access to certain maps and information. It will mainly revolve around the Natural Science building since it houses the computer science department. */
