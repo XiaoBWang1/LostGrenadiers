@@ -1,0 +1,117 @@
+Medical Terminology, AHLT-M 330, LF339
+Introduction to Pharmacy, AHLT-P 101, LF215
+Basic Human Anatomy, ANAT-A 215, LF343
+BE: Biology 311 & 319, BIOL-BE 311, LF338
+Humans and the Biological World, BIOL-L 100, LF334, LF348, LF338
+Introduction to Biological Sciences 1, BIOL-L 101, LF301, LF334
+Introduction to Biological Sciences 2, BIOL-L 102, LF111, LF301
+Environmental Biology and Conservation, BIOL-L 200, LF244
+Molecular Biology, BIOL-L 211, LF243
+Field Biology, BIOL-L 303, LF170
+Genetics, BIOL-L 312, LF335
+Cell Biology, BIOL-L 312, LF335
+Cell Biology Laboratory, BIOL-L 313, LF335
+Genetics Laboratory, BIOL-L 319, LF338
+Natural History of Coral Reefs, BIOL-L 341, LF170
+Applied Conservation Biology, BIOL-L 343, LF170
+Biology Seminar, BIOL-L 403, LF334
+Introduction to Financial Accounting, BUS-A 201, HH106
+Introduction to Managerial Accounting, BUS-A 202, HH106
+Cost and Performance Measurement for Decision Making, BUS-A 325, HH106
+Financial Management, BUS-F 301, HH106
+Financial Decision Making, BUS-F 302, HH103
+Legal Environment of Business, BUS-L 201, HH103
+Operations Management, BUS-P 301, HH103
+Principles of Business Administration, BUS-W 100, HH212
+Elementary Chemistry 1, CHEM-C 101, LF143
+Elementary Chemistry 2, CHEM-C 102, LF244
+Principles of Chemistry 2, CHEM-C 106, PS110
+Elementary Chemistry Lab 1, CHEM-C 121, PS206
+Elementary Chemistry Lab 2, CHEM-C 122, PS206
+Experimental Chemistry 1, CHEM-C 125, PS210
+Experimental Chemistry 2, CHEM-C 126, PS210
+Chemical Measurements Laboratory 1, CHEM-C 315, PS111
+Spectrochemistry and Separations, CHEM-C 318, PS106
+Organic Chemistry Laboratory 2, CHEM-C 344
+Introduction to Criminal Justice, CJUS-P 100, CV106
+Criminal Justice Data, Methods, and Resources, CJUS-P 295, CV107
+Conflict Management, CJUS-P 313, CV105
+Human Trafficking, CJUS-P 327, CV107
+Sex Offenders, CJUS-P 362
+Freshman Seminar in Social and Historical Studies, COAS-S 104, KV103
+Motivation and Self-Management, COAS-S 200, KV111
+Advanced Integrated Strategic Communication Planning, COMM-I 441, KV107
+Public Speaking, COMM-S 121, KV001, KV009
+Interpersonal Communication, COMM-S 122, KV009
+Group and Team Communication, COMM-S 229, KV101
+Interviewing Principles and Practices, COMM-S 327, KV101
+Empirical Research Methods in Communication Studies, COMM-S 424, KV111
+Organizational Communication, COMM-S 440, KV111
+Introduction to Group Counseling, COUN-C 532, CV202
+Internship in Counseling, COUN-C 550, CV111
+Introduction into Marriage and Family Therapy, COUN-C 567, CV111
+Counseling Techniques: Affective/Humanistic Interventions, COUN-C 601, CV111
+FUNDAMENTALS OF COMPUTER NETWORKS, CSCI-B 438, LF105
+Network Security, CSCI-B 439, LF105
+INTRODUCTION TO PROGRAMMING I, CSCI-A 201, LF111
+Introduction to Computer Science, CSCI-C 104, LF105
+Computer Programming II, CSCI-C 201, LF111
+Introduction to Computer Software Systems, CSCI-C 202, PS014
+Foundations of Digital Computing, CSCI-C 251, LF105
+PROGRAMMING LANGUAGES, CSCI-C 311, TBA
+ADVANCED PROGRAMMING, CSCI-C 321, TBA
+COMPUTER STRUCTURES, CSCI-C 335, TBA
+Software Engineering, CSCI-C 346, LF139
+WEB ENTERPRISE SYSTEMS, CSCI-P 422, TBA
+Introduction to Microeconomics, ECON-E 201, HH126
+Introduction to Macroeconomics, ECON-E 202, HH126
+Money and Banking, ECON-E 350, HH126
+Introduction to Applied Econometrics, ECON-E 371, HH102
+Public School Personnel Management, EDUC-A 638, HH212
+Social Studies in the Elementary Schools, EDUC-E 325, HH202
+Science in the Elementary Schools, EDUC-E 328, LF255
+Methods of Teaching Language Arts, EDUC-E 339, HH200, HH202
+Methods of Teaching Reading II, EDUC-E 341, HH202, HH208
+Math in the Elementary Schools, EDUC-E 343, HH200
+Examining Self as Teacher, EDUC-F 200, HH202
+Exploring the Personal Demands of Teaching: Laboratory Experience, EDUC-F 201, HH210
+Exploring the Personal Demands of Teaching: Field Experience, EDUC-F 202, HH212
+Child as Learner Seminar, EDUC-F 401, HH202
+Integration of Content, EDUC-F 401, HH208, HH210
+Intervention, EDUC-F 401, HH200
+Introduction to Educational Thought, EDUC-H 205, LF255
+Block 1 Practicum, EDUC-M 101, HH210
+Teaching in a Pluralistic Society, EDUC-M 300, HH208
+Laboratory/Field Experience, EDUC-M 301, KV215
+The Teaching of Music in the Elementary Schools, EDUC-M 323, HH208
+Designing Visual Learning Experience for Children, EDUC-M 330, KV215
+Art Experience for the Elementary Teacher, EDUC-M 333, HH200, HH202
+Health and Wellness for Teachers, EDUC-M 356, HH200
+Teaching Elementary Mathematics Problem Solving, EDUC-N 443, HH200
+The Elementary School Child: Physical, Emotional, & Societal Development, EDUC-P 248, HH210
+General Educational Psychology, EDUC-P 250, HH200
+Classroom Assessment, EDUC-P 320, HH208
+Beginning Technology Skills, EDUC-W 201, HH205
+Integrating Technology into Teaching - Part 1, EDUC-W 301, HH210, HH212
+Careers for English Majors, ENG-E 199, KV101
+Ancient and Medieval World Literature, ENG-L 101, KV107
+Introduction to Fiction, ENG-L 104, KV107
+English Literature Since 1800, ENG-L 299, KV009
+Late Plays of Shakespeare, ENG-L 314, KV001
+American Literature 1800-1865, ENG-L 351, KV103
+American Literature 1865-1914, ENG-L 352, KV103
+American Literature Since 1914, ENG-L 354, KV103
+Critical Practices, ENG-L371, KV103
+Reading, Writing, and Inquiry I, ENG-W 131, KV002, KV101, KV103, KV107
+Introduction to Creative Writing, ENG-W 206, KV112
+Professional Writing Skills, ENG-W 231, KV006, KV107
+Technical Report Writing, ENG-W 234, KV101
+Writing in Context, ENG-W 250, KV111
+Writing in the Arts & Sciences, ENG-W290, KV001, KV107, KV111
+Writing Poetry, ENG-W 303, KV101
+RHETORICAL PRACTICES, ENG-W 371, KV103
+ADVANCED POETRY WRITING, ENG-W 403, KV101
+ANCIENT AND MEDIEVAL ART, FINA-A 101, KV115
+AFRICAN, NEW WORLD AND OCEANIC ART, FINA-A 150, KV115
+
+
