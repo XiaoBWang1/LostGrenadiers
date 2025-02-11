@@ -1,41 +1,36 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLineEdit, QPushButton, QLabel, QMessageBox
+import PyQt5.QtWidgets
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import os
 
 
-class MapSearchWindow(QMainWindow):
+class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Map Search App")
         self.resize(800, 600)
 
-
         # Create a label to display the map background image
-        self.mapLabel = QLabel(self)
-
-        self.pixmap = QPixmap("Images/LifeScience1 map.png")
+        self.mapLabel = PyQt5.QtWidgets.QLabel(self)
+        self.pixmap = QPixmap("Images/PNG/LifeScience1 map.png")
         self.mapLabel.setPixmap(self.pixmap)
         self.mapLabel.setScaledContents(True)
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
 
         # Create the search bar (QLineEdit) in the top left corner
-        self.searchBar = QLineEdit(self)
+        self.searchBar = PyQt5.QtWidgets.QLineEdit(self)
         self.searchBar.setPlaceholderText("Search for a class")
         self.searchBar.setFixedWidth(300)
         self.searchBar.move(20, 20)
 
         # Optional: Create a search button next to the search bar
-        self.searchButton = QPushButton("Search", self)
+        self.searchButton = PyQt5.QtWidgets.QPushButton("Search", self)
         self.searchButton.move(330, 20)
 
         # Connect signals to perform search when the user hits Enter or clicks the button
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
-
-
-
 
 
     def resizeEvent(self, event):
@@ -44,30 +39,22 @@ class MapSearchWindow(QMainWindow):
         super().resizeEvent(event)
 
 
-
-
     def performSearch(self):
         #Retrieve the user's query, search the file, and display results.
         query = self.searchBar.text().strip()
         if not query:
-            QMessageBox.warning(self, "Input Error", "Please enter a search query.")
+            PyQt5.QtWidgets.QMessageBox.warning(self, "Input Error", "Please enter a search query.")
             return
-
         results = self.searchClass(query)
         if results:
             # If multiple matches are found, join them into a single string.
             result_str = "\n".join(results)
-            QMessageBox.information(self, "Search Results", f"Building Number(s):\n{result_str}")
+            PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Building Number(s):\n{result_str}")
         else:
-            QMessageBox.information(self, "Search Results", "No matching class found.")
-
-
-
-
+            PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", "No matching class found.")
 
 
     def searchClass(self, query):
-
         results = []
         try:
             with open("Database Sources/Course list.txt", "r") as file:
@@ -90,7 +77,7 @@ class MapSearchWindow(QMainWindow):
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = PyQt5.QtWidgets.QApplication(sys.argv)
     window = MapSearchWindow()
     window.show()
     sys.exit(app.exec_())
