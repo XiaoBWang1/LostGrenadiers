@@ -4,14 +4,14 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import os
 
-
+#Create a class for the opening sequence of the program
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Life Science Bldg 1st floor" )
+        self.setWindowTitle("Lost Grenadiers" + " Life Science Building 1st floor" )
         self.resize(800, 600)
 
-        # Create a label to display the map background image
+        # Create a label to display the map background image from images folder directory
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
         self.pixmap = QPixmap("Images/PNG/LifeScience1 map.png")
         self.mapLabel.setPixmap(self.pixmap)
@@ -34,12 +34,14 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
 
     def resizeEvent(self, event):
+
         #Ensure the map image always fills the window.
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
         super().resizeEvent(event)
 
 
     def performSearch(self):
+
         #Retrieve the user's query, search the file, and display results.
         query = self.searchBar.text().strip()
         if not query:
@@ -47,6 +49,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
             return
         results = self.searchClass(query)
         if results:
+
             # If multiple matches are found, join them into a single string.
             result_str = "\n".join(results)
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Building Number(s):\n{result_str}")
@@ -56,26 +59,32 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
     def searchClass(self, query):
         results = []
+        #Try catch exception opening the data list with read-only privilege
         try:
             with open("Database Sources/Course list.txt", "r") as file:
                 for line in file:
+
                     # Split the line into parts (expecting three parts per line)
                     parts = line.strip().split(',')
                     if len(parts) < 3:
-                        continue  # Skip any improperly formatted lines
+                        continue
+
+                    # Skip any improperly formatted lines
                     class_name = parts[0].strip()
                     class_number = parts[1].strip()
                     building_number = parts[2].strip()
-                    # Perform a case-insensitive check if the query is in the class name or number.
+
+                    # Perform a case-insensitive check if the query is in the class name or number
                     if (query.lower() in class_name.lower() or
                             query.lower() in class_number.lower()):
                         results.append(building_number)
         except Exception as e:
-            # If there's an error (for example, file not found), return an error message.
+
+            # If there's an error (for example, file not found), return an error message
             results.append("Error reading file: " + str(e))
         return results
 
-
+#Enable the program to close and exit
 if __name__ == '__main__':
     app = PyQt5.QtWidgets.QApplication(sys.argv)
     window = MapSearchWindow()
