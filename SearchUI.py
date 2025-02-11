@@ -8,7 +8,7 @@ import os
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Map Search App")
+        self.setWindowTitle("Lost Grenadiers" + " Life Science Bldg 1st floor" )
         self.resize(800, 600)
 
         # Create a label to display the map background image
