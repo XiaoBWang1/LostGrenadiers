@@ -1,0 +1,3 @@
+Sprint9
+	
+	The Lost Grenadiers' map has a preview demo build that has the basic search functionality of the affiliated classes building along with a simple map of the building Natural Science as the precursor to the larger build. The program is built on Python with SearchUI which is a React library that assists with search functions. The program functionality is associated with the CSV file that's been compiled and stored in the database folder of the project. 
