@@ -8,12 +8,12 @@ import os
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Life Science Building 1st floor" )
+        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 2nd floor" )
         self.resize(800, 600)
 
         #Create a label to display the map background image from images folder directory.
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
-        self.pixmap = QPixmap("Images/PNG/LifeScience1 map.png")
+        self.pixmap = QPixmap("../Images/PNG/PhysicalScience2 map.png")
         self.mapLabel.setPixmap(self.pixmap)
         self.mapLabel.setScaledContents(True)
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
@@ -61,7 +61,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         results = []
         #Try catch exception opening the data list with read-only privilege.
         try:
-            with open("Database Sources/Course list.txt", "r") as file:
+            with open("../Database Sources/Course list.txt", "r") as file:
                 for line in file:
 
                     #Split the line into parts (expecting three parts per line).
