@@ -1,21 +1,24 @@
 import sys
+from itertools import combinations
 import subprocess
 import PyQt5.QtWidgets
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QApplication, QWidget, QComboBox, QVBoxLayout, QLabel
-from PyQt5 import Qt
+from PyQt5.QtCore import Qt
+import os
+
+from PyQt5.QtWidgets import QComboBox
 
 
 #Create a class for the opening sequence of the program.
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Life Science Building 1st floor" )
+        self.setWindowTitle("Lost Grenadiers" + " Life Science Building 2nd floor" )
         self.resize(800, 600)
 
         #Create a label to display the map background image from images folder directory.
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
-        self.pixmap = QPixmap("../Images/PNG/LifeScience1 map.png")
+        self.pixmap = QPixmap("../Images/PNG/LifeScience2 map.png")
         self.mapLabel.setPixmap(self.pixmap)
         self.mapLabel.setScaledContents(True)
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
@@ -26,10 +29,6 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.setFixedWidth(300)
         self.searchBar.move(20, 20)
 
-        self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
-        self.cvButton.move(20, 50)
-        self.cvButton.clicked.connect(self.run_lf2)
-
         #Optional: Create a search button next to the search bar.
         self.searchButton = PyQt5.QtWidgets.QPushButton("Search", self)
         self.searchButton.move(330, 20)
@@ -38,9 +37,13 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
 
+        self.cvButton = PyQt5.QtWidgets.QPushButton("1st Floor", self)
+        self.cvButton.move(20, 50)
+        self.cvButton.clicked.connect(self.run_lf1)
+
     #Helper function for floor change
-    def run_lf2(self):
-        subprocess.run(['python', 'LifeScience2UI.py'])
+    def run_lf1(self):
+        subprocess.run(['python', 'LifeScienceUI.py'])
         sys.exit(app.exec_())
     def resizeEvent(self, event):
 
