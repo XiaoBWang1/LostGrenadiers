@@ -72,7 +72,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         if results:
             # If multiple matches are found, join them into a single string.
             result_str = "\n".join(results)
-            PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Building Number(s):\n{result_str}")
+            PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Building/Room Number(s):\n{result_str}")
         else:
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", "No matching class found.")
 
