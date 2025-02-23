@@ -8,8 +8,8 @@ import os
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 2nd floor" )
-        self.resize(800, 600)
+        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 1st floor")
+        self.resize(1200, 800)
 
         #Create a label to display the map background image from images folder directory.
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
@@ -22,23 +22,21 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar = PyQt5.QtWidgets.QLineEdit(self)
         self.searchBar.setPlaceholderText("Search for a class")
         self.searchBar.setFixedWidth(300)
-        self.searchBar.move(20, 20)
+        self.searchBar.move(30, 30)
 
-        #Optional: Create a search button next to the search bar.
+        #Create a search button next to the search bar.
         self.searchButton = PyQt5.QtWidgets.QPushButton("Search", self)
-        self.searchButton.move(330, 20)
+        self.searchButton.move(330, 30)
 
         #Connect signals to perform search when the user hits Enter or clicks the button.
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
-
 
     def resizeEvent(self, event):
 
         #Ensure the map image always fills the window.
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
         super().resizeEvent(event)
-
 
     def performSearch(self):
 
@@ -55,7 +53,6 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Room Number(s):\n{result_str}")
         else:
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", "No matching class found.")
-
 
     def searchClass(self, query):
         results = []
