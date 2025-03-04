@@ -26,6 +26,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.setFixedWidth(300)
         self.searchBar.move(20, 20)
 
+        #Button to change floors
         self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
         self.cvButton.move(20, 50)
         self.cvButton.clicked.connect(self.run_lf2)
