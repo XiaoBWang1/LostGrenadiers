@@ -1,20 +1,21 @@
 import sys
-import PyQt5.QtWidgets
 import subprocess
+import PyQt5.QtWidgets
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import Qt
-import os
+from PyQt5.QtWidgets import QApplication, QWidget, QComboBox, QVBoxLayout, QLabel
+from PyQt5 import Qt
+
 
 #Create a class for the opening sequence of the program.
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 1st floor")
-        self.resize(1200, 800)
+        self.setWindowTitle("Lost Grenadiers" + " Hillside Hall 1st floor" )
+        self.resize(800, 600)
 
         #Create a label to display the map background image from images folder directory.
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
-        self.pixmap = QPixmap("../Images/PNG/PhysicalScience2 map.png")
+        self.pixmap = QPixmap("../Images/PNG/Hillside1 map.png")
         self.mapLabel.setPixmap(self.pixmap)
         self.mapLabel.setScaledContents(True)
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
@@ -25,20 +26,49 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.setFixedWidth(300)
         self.searchBar.move(20, 20)
 
-        #Create a search button next to the search bar.
+        #Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
+        self.cvButton.move(20, 50)
+        self.cvButton.clicked.connect(self.run_hh2)
+
+        # Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("3rd Floor", self)
+        self.cvButton.move(20, 80)
+        self.cvButton.clicked.connect(self.run_hh3)
+
+        # Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("4th Floor", self)
+        self.cvButton.move(20, 110)
+        self.cvButton.clicked.connect(self.run_hh4)
+
+        # Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("5th Floor", self)
+        self.cvButton.move(20, 140)
+        self.cvButton.clicked.connect(self.run_hh5)
+
+        #Optional: Create a search button next to the search bar.
         self.searchButton = PyQt5.QtWidgets.QPushButton("Search", self)
-        self.searchButton.move(330, 30)
+        self.searchButton.move(330, 20)
 
         #Connect signals to perform search when the user hits Enter or clicks the button.
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
 
-        self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
-        self.cvButton.move(20, 50)
-        self.cvButton.clicked.connect(self.run_ps2)
+    #Helper function for floor change
+    def run_hh2(self):
+        subprocess.run(['python', 'Hillside2UI.py'])
+        sys.exit(app.exec_())
 
-    def run_ps2(self):
-        subprocess.run(['python', 'PhysicalScience2UI.py'])
+    def run_hh3(self):
+        subprocess.run(['python', 'Hillside3UI.py'])
+        sys.exit(app.exec_())
+
+    def run_hh4(self):
+        subprocess.run(['python', 'Hillside4UI.py'])
+        sys.exit(app.exec_())
+
+    def run_hh5(self):
+        subprocess.run(['python', 'Hillside5UI.py'])
         sys.exit(app.exec_())
     def resizeEvent(self, event):
 
@@ -61,6 +91,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", f"Room Number(s):\n{result_str}")
         else:
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", "No matching class found.")
+
 
     def searchClass(self, query):
         results = []
