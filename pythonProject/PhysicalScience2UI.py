@@ -9,12 +9,12 @@ import os
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 1st floor")
+        self.setWindowTitle("Lost Grenadiers" + " Physical Science Building 2nd floor")
         self.resize(1200, 800)
 
         #Create a label to display the map background image from images folder directory.
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
-        self.pixmap = QPixmap("../Images/PNG/PhysicalScience2 map.png")
+        self.pixmap = QPixmap("../Images/PNG/PhysicalScience3 map.png")
         self.mapLabel.setPixmap(self.pixmap)
         self.mapLabel.setScaledContents(True)
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
@@ -33,12 +33,12 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
 
-        self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
+        self.cvButton = PyQt5.QtWidgets.QPushButton("1st Floor", self)
         self.cvButton.move(20, 50)
-        self.cvButton.clicked.connect(self.run_ps2)
+        self.cvButton.clicked.connect(self.run_ps)
 
-    def run_ps2(self):
-        subprocess.run(['python', 'PhysicalScience2UI.py'])
+    def run_ps(self):
+        subprocess.run(['python', 'PhysicalScienceUI.py'])
         sys.exit(app.exec_())
     def resizeEvent(self, event):
 

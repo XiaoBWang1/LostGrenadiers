@@ -1,4 +1,5 @@
 import sys
+import subprocess
 import PyQt5.QtWidgets
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
@@ -32,13 +33,29 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
 
+        # Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("2nd Floor", self)
+        self.cvButton.move(20, 50)
+        self.cvButton.clicked.connect(self.run_cv2)
+
+        # Button to change floors
+        self.cvButton = PyQt5.QtWidgets.QPushButton("3rd Floor", self)
+        self.cvButton.move(20, 80)
+        self.cvButton.clicked.connect(self.run_cv3)
+
+    def run_cv2(self):
+        subprocess.run(['python', 'Crestview2UI.py'])
+        sys.exit(app.exec_())
+
+    def run_cv3(self):
+        subprocess.run(['python', 'Crestview3UI.py'])
+        sys.exit(app.exec_())
 
     def resizeEvent(self, event):
 
         #Ensure the map image always fills the window.
         self.mapLabel.setGeometry(0, 0, self.width(), self.height())
         super().resizeEvent(event)
-
 
     def performSearch(self):
 

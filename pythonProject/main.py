@@ -55,6 +55,11 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
         self.cvButton.clicked.connect(self.run_cv)
 
+        self.cvButton = PyQt5.QtWidgets.QPushButton("HH", self)
+        self.cvButton.move(480, 90)
+        self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
+        self.cvButton.clicked.connect(self.run_hh)
+
         # Connect signals to perform search when the user hits Enter or clicks the button
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
@@ -70,6 +75,9 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
     def run_cv(self):
         subprocess.run(['python', 'CrestviewUI.py'])
+
+    def run_hh(self):
+        subprocess.run(['python', 'HillsideUI.py'])
 
     def resizeEvent(self, event):
         #Ensure the map image always fills the window.
