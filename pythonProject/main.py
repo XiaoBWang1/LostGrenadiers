@@ -10,7 +10,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Lost Grenadiers" + " Campus Map" )
-        self.resize(800, 600)
+        self.setFixedSize(1000, 800)
 
         # Create a label to display the map background image
         self.mapLabel = PyQt5.QtWidgets.QLabel(self)
@@ -41,22 +41,22 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
         # Buttons for the local maps/buildings
         self.lfButton = PyQt5.QtWidgets.QPushButton("LF", self)
-        self.lfButton.move(400, 165)
+        self.lfButton.move(520, 225)
         self.lfButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
         self.lfButton.clicked.connect(self.run_lf)
 
         self.psButton = PyQt5.QtWidgets.QPushButton("PS", self)
-        self.psButton.move(420, 200)
+        self.psButton.move(540, 290)
         self.psButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
         self.psButton.clicked.connect(self.run_ps)
 
         self.cvButton = PyQt5.QtWidgets.QPushButton("CV", self)
-        self.cvButton.move(420, 125)
+        self.cvButton.move(540, 170)
         self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
         self.cvButton.clicked.connect(self.run_cv)
 
         self.cvButton = PyQt5.QtWidgets.QPushButton("HH", self)
-        self.cvButton.move(480, 90)
+        self.cvButton.move(600, 125)
         self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
         self.cvButton.clicked.connect(self.run_hh)
 
@@ -127,7 +127,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         marker = PyQt5.QtWidgets.QLabel(self)
         marker.setPixmap(markerPixmap)
         marker.setScaledContents(True)
-        marker.resize(markerPixmap.size())
+        marker.setFixedSize(10,10)
 
         # Get the building coordinates from the dictionary
         x, y = self.buildingCoordinates[building]
