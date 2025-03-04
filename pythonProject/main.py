@@ -164,3 +164,5 @@ if __name__ == '__main__':
     window = MapSearchWindow()
     window.show()
     sys.exit(app.exec_())
+
+
