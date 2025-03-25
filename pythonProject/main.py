@@ -6,6 +6,24 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 import subprocess
 
+
+# helper functions for local map calls
+
+def run_lf():
+    subprocess.run(['python', 'LifeScienceUI.py'])
+
+def run_ps():
+    subprocess.run(['python', 'PhysicalScienceUI.py'])
+
+def run_cv():
+    subprocess.run(['python', 'CrestviewUI.py'])
+
+def run_hh():
+    subprocess.run(['python', 'HillsideUI.py'])
+
+def run_kv():
+    subprocess.run(['python', 'KnobviewUI.py'])
+
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
@@ -23,7 +41,8 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.buildingCoordinates = {
             "LF": (400, 165),
             "PS": (420, 200),
-            "CV": (420, 125)
+            "CV": (420, 125),
+            "TB": (0,0)
         }
         #keeps track of old blip markers so they can be cleared
         self.markerLabels = []
@@ -43,41 +62,31 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
         self.lfButton = PyQt5.QtWidgets.QPushButton("LF", self)
         self.lfButton.move(520, 225)
         self.lfButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
-        self.lfButton.clicked.connect(self.run_lf)
+        self.lfButton.clicked.connect(run_lf)
 
         self.psButton = PyQt5.QtWidgets.QPushButton("PS", self)
         self.psButton.move(540, 290)
         self.psButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
-        self.psButton.clicked.connect(self.run_ps)
+        self.psButton.clicked.connect(run_ps)
 
         self.cvButton = PyQt5.QtWidgets.QPushButton("CV", self)
         self.cvButton.move(540, 170)
         self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
-        self.cvButton.clicked.connect(self.run_cv)
+        self.cvButton.clicked.connect(run_cv)
 
         self.cvButton = PyQt5.QtWidgets.QPushButton("HH", self)
         self.cvButton.move(600, 125)
         self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
-        self.cvButton.clicked.connect(self.run_hh)
+        self.cvButton.clicked.connect(run_hh)
+
+        self.cvButton = PyQt5.QtWidgets.QPushButton("KV", self)
+        self.cvButton.move(800, 160)
+        self.cvButton.setStyleSheet("background-color: transparent; border-color: transparent; color: transparent;")
+        self.cvButton.clicked.connect(run_kv)
 
         # Connect signals to perform search when the user hits Enter or clicks the button
         self.searchBar.returnPressed.connect(self.performSearch)
         self.searchButton.clicked.connect(self.performSearch)
-
-
-
-    # helper functions for local map calls
-    def run_lf(self):
-        subprocess.run(['python', 'LifeScienceUI.py'])
-
-    def run_ps(self):
-        subprocess.run(['python', 'PhysicalScienceUI.py'])
-
-    def run_cv(self):
-        subprocess.run(['python', 'CrestviewUI.py'])
-
-    def run_hh(self):
-        subprocess.run(['python', 'HillsideUI.py'])
 
     def resizeEvent(self, event):
         #Ensure the map image always fills the window.
@@ -120,14 +129,14 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
     def placeMarker(self, building):
         #loads the blip onto map
-        markerPixmap = QPixmap("Images/PNG/GUI_Map_Blip.png")
+        markerPixmap = QPixmap("../Images/JPEG/Logo.jpg")
         if markerPixmap.isNull():
             PyQt5.QtWidgets.QMessageBox.warning(self, "Image Error", "Blip image 'GUI_Map_Blip.png' not found.")
             return
         marker = PyQt5.QtWidgets.QLabel(self)
+        marker.setFixedSize(50, 50)
         marker.setPixmap(markerPixmap)
-        marker.setScaledContents(True)
-        marker.setFixedSize(10,10)
+
 
         # Get the building coordinates from the dictionary
         x, y = self.buildingCoordinates[building]
@@ -154,6 +163,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
                         if (query.lower() in class_name.lower() or
                                 query.lower() in class_number.lower()):
                             results.append(building_number)
+                            self.placeMarker(building_number[0:2])
             except Exception as e:
                 # If there's an error (for example, file not found), return an error message.
                 results.append("Error reading file: " + str(e))
@@ -164,5 +174,3 @@ if __name__ == '__main__':
     window = MapSearchWindow()
     window.show()
     sys.exit(app.exec_())
-
-
