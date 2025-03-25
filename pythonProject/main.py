@@ -27,6 +27,7 @@ def run_kv():
 class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
+        self.marker = None
         self.setWindowTitle("Lost Grenadiers" + " Campus Map" )
         self.setFixedSize(1000, 800)
 
@@ -39,14 +40,15 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
         # pixel coordinates for the buildings
         self.buildingCoordinates = {
-            "LF": (400, 165),
-            "PS": (420, 200),
-            "CV": (420, 125),
-            "TB": (0,0)
+            "LF": (560, 225),
+            "PS": (580, 290),
+            "CV": (580, 170),
+            "TB": (-100, -100),
+            "KV": (840, 160),
+            "HH": (640, 120)
         }
         #keeps track of old blip markers so they can be cleared
         self.markerLabels = []
-
 
         # Create the search bar (QLineEdit) in the top left corner
         self.searchBar = PyQt5.QtWidgets.QLineEdit(self)
@@ -114,8 +116,7 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
             #displays blip for matching buildings
             for building in results:
                 building = building.strip()
-                if building in self.buildingCoordinates:
-                    self.placeMarker(building)
+                self.placeMarker(building)
 
         else:
             PyQt5.QtWidgets.QMessageBox.information(self, "Search Results", "No matching class found.")
@@ -129,21 +130,21 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
 
     def placeMarker(self, building):
         #loads the blip onto map
-        markerPixmap = QPixmap("../Images/JPEG/Logo.jpg")
+        markerPixmap = QPixmap("../Images/JPEG/Blip.jpg")
         if markerPixmap.isNull():
             PyQt5.QtWidgets.QMessageBox.warning(self, "Image Error", "Blip image 'GUI_Map_Blip.png' not found.")
             return
-        marker = PyQt5.QtWidgets.QLabel(self)
-        marker.setFixedSize(50, 50)
-        marker.setPixmap(markerPixmap)
+        self.marker = PyQt5.QtWidgets.QLabel(self)
+        self.marker.setFixedSize(20, 20)
+        self.marker.setPixmap(markerPixmap)
 
 
         # Get the building coordinates from the dictionary
-        x, y = self.buildingCoordinates[building]
+        x, y = self.buildingCoordinates[building[0:2]]
         # Adjust the marker so it is centered over the coordinate (optional)
-        marker.move(x - markerPixmap.width() // 2, y - markerPixmap.height() // 2)
-        marker.show()
-        self.markerLabels.append(marker)
+        self.marker.move(x, y)
+        self.marker.show()
+        self.markerLabels.append(self.marker)
 
 
 
@@ -163,7 +164,6 @@ class MapSearchWindow(PyQt5.QtWidgets.QMainWindow):
                         if (query.lower() in class_name.lower() or
                                 query.lower() in class_number.lower()):
                             results.append(building_number)
-                            self.placeMarker(building_number[0:2])
             except Exception as e:
                 # If there's an error (for example, file not found), return an error message.
                 results.append("Error reading file: " + str(e))
