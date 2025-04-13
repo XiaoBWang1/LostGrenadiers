@@ -1,6 +1,6 @@
 INSTALL 
 
-The Lost Grenadiers' program can be clone from the the its GitHub repository from the following address:
+The Lost Grenadiers' program can be clone from the the its GitHub repository from the following URL:
 
 https://github.com/XiaoBWang1/LostGrenadiers
 
